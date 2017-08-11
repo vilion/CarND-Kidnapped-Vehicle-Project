@@ -114,6 +114,13 @@ public:
 	const bool initialized() const {
 		return is_initialized;
 	}
+
+private:
+  void transParticle2MapCoodinate(LandmarkObs &obs, Particle particle);
+
+  std::vector<double> normalize_vector(std::vector<double> inputVector);
+
+  std::vector<double> calculateWeights(Particle particle, std::vector<LandmarkObs> observations, double std_landmark[], std::map<int, Map::single_landmark_s> mappingLandmarks);
 };
 
 
